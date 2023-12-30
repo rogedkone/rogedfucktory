@@ -1,0 +1,9 @@
+{
+	"name": "i-speak-for-the-trees-v2",
+	"version": "1.1.1",
+	"factorio_version": "1.1",
+	"title": "I Speak for the Trees Version 2",
+	"author": "-DeadlyKitten",
+	"description": "Trees, rocks, and a couple other things have a chance to spawn biters when a they are destroyed. It is fully customisable with all fetures being enabled or disabled independently. This mod is inspired by but not derived from https://mods.factorio.com/mod/i-speak-for-the-trees \n\nWith this mod you can spawn a number of biters after a tree dies, a rock dies, a spawner dies, or after part of your base dies (the last is disabled by default). It will chose a biter or spitter apropreate for the current evolution to a max evolution (0.9 by default).",
+	"dependencies": ["stdlib >= 1.4.6"]
+}

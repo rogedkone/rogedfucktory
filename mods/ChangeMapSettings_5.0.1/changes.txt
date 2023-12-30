@@ -1,0 +1,12 @@
+Features:
+  - Added peaceful mode description.
+  - Changed license to MIT.
+    I cannot (reasonably) play games without controller support.
+    Maintaining mods for a game I can't play is an uninteresting hobby for me.
+    So I want to make it easier for others to fork my mods.
+    May you take this code and have fun with it.
+
+Bugfixes:
+  - Fixed crash when setting map preset to "Space Exploration Defaults".
+  - Fixed locale of labels for vanilla ores.
+  - Fixed that space exploration planet size was reset to default when applying map gen settings. 

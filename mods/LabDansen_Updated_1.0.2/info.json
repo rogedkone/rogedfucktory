@@ -1,0 +1,9 @@
+{
+	"name": "LabDansen_Updated",
+	"author": "object-Object",
+	"version": "1.0.2",
+	"title": "LabDansen Updated",
+	"description": "Adds muffled rave music to labs. Best used with DiscoScience.",
+	"dependencies": ["base", "? DiscoScience"],
+	"factorio_version": "1.1"
+}

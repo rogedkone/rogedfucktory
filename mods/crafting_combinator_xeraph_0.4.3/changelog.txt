@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+Date: 2023-02-13
+  Bugfixes:
+    - Fixed productivity modules disappearing due to recipe changes (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63e93020e1bed1cf129cdf2a)
+---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 2023-02-11
+  Bugfixes:
+    - Fixed crash caused by recipes that are not mapped to any signals (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63e64680caf7d3b2c92ff4f8)
+---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: 2023-02-04
+  Bugfixes:
+    - Fixed incomplete crafting combinator mining by Nanobots (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63ddb2d302284dc0de4b221c)
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2023-02-02
+  Info:
+    - Changes dependency of Rusty's Locale Utilities to Xeraph's Fork:
+      - The Original Rusty's Locale Utilities can be disabled if there are no other mods that depends on it
+      - Similarly, you can ignore sync mod's suggestion to enable the original Rusty's Locale Utilities if you are migrating a save
+---------------------------------------------------------------------------------------------------
+Version: 0.3.5
+Date: 2023-01-25
+  Changes:
+    - Changed the order string of 'Crafting combinator recipes' signal group. It will now be placed at the end of all other signal groups (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63c7efbfca0d2b9a1bfd46b5)
+  Bugfixes:
+    - Fixed crash while migrating a save with uninitialised signal cache lamp entity (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63ceddab9e540534a4b8e92d)
+---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: 2023-01-11
+  Changes:
+    - Handles mod crash when user updates a blueprint within a blueprint book - note that blueprints in a blueprint book remains non-updateable by this mod (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63bdb55835fe459808a056ad)
+    - Attempt to fix crash when a recipe cached by cc is removed due to mod updates/removal. This is labelled as "attempt-to-fix" due to not having a way to reproduce the bug
+---------------------------------------------------------------------------------------------------
+Version: 0.3.3
+Date: 2022-12-19
+  Bugfixes:
+    - Fixes mod crash when on_post_entity_died did not return a ghost object (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63a08d70cf06c35a965eaca9)
+---------------------------------------------------------------------------------------------------
+Version: 0.3.2
+Date: 2022-11-23
+  Bugfixes:
+    - Fixes mod crash when rc gui is clicked
+---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 2022-11-23
+  Bugfixes:
+    - Fixes migration application and setmetatable conditions (finally, I hope?). P/S: why is migration applied after on_init?
+  Changes:
+    - Disables update() for newly cloned and created ccs (by housekeeping module) until after latching. This should prevent unwanted behaviour if cc updates before latching
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2022-11-23
+  Bugfixes:
+    - Mod entities deleted by the "Remove all entities" and "Delete surface" button in editor no longer crashes the mod
+  Changes:
+    - Implements entity validity check before every combinator updates, mod's time usage is expected to increase about 10-20%
+    - This change is deemed necessary for stability reasons as it allows the mod to handle entity anomalies and notify user when mod entities were incorrectly handled by other mods (or editor)
+  Control:
+    - Ccs, assemblers and containers now perform their latching actions one-tick after their cloning events have been handled
+    - This solves the problem of entities possibly latching on to combinators without a state due to unknown cloning order
+    - Delaying the find_chest() and find_assembler() calls by one tick should help with smoothening the UPS spike caused by area/brush cloning
+  Locale:
+    - Updated strings for blueprint.delayed-transfer to inform mod limitation while updating blueprints
+    - Missing translation for new keys: crafting_combinator.err
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2022-11-14
+  Bugfixes:
+    - Fixes possible bug that can happen when housekeeping module breaks lookup table reference (https://github.com/loneguardian/CraftingCombinator/commit/38e779f4361dc6cad7e18313a3ffc0825bda4dbb)
+  Changes:
+    - Crafting combinators are no longer fast-replaceable with constant combinators (and vice versa)
+      - This should reduce unwanted behaviors due to fast-replace such as:
+         - Crafting combinators leaving behind orphaned entities
+         - Invalid entity or control behavior object (https://mods.factorio.com/mod/crafting_combinator/discussion/6210fc02f30d3ff351b5cdbc)
+      - The premise behind the change is that constant combinators and crafting combinators are functionally different, hence it doesn't make sense to allow fast-replace mechanics between them.
+      - Feedback on this change is welcome
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2022-11-07
+  Bugfixes:
+    - Fixes possible bug that can happen when a player mines a cc without sufficient inventory space for module chest's content (https://github.com/loneguardian/CraftingCombinator/commit/77cd21e7d1ac4e64c33cf70b437434d5d971acfd)
+  Changes:
+    - Cloning module has been rewritten to properly handle signal cache cloning
+    - Minor optimizations
+---------------------------------------------------------------------------------------------------
+Version: 0.1.4
+Date: 2022-11-04
+  Info:
+    - First release of Xeraph's fork (based on Crafting Combinator 0.16.3)
+    - Migration to this version will acknowledge the removal of 'crafting_combinator:settings-entity (programmable-speaker)' and its related objects, this is expected
+  Bugfixes:
+    - Fixed possible duping if an incorrect recipe is sent to cc (https://github.com/theRustyKnife/CraftingCombinator/issues/70)
+    - Fixed GUI not closing when its associated cc/rc is destroyed
+    - Fixed cc's tendency to insert too much items from the overflow chest after recipe switch (https://mods.factorio.com/mod/crafting_combinator/discussion/632ce909888658ef30d15be0 https://forums.factorio.com/viewtopic.php?p=570197#p570197)
+      - By default, cc will insert ingredients for only two craft cycles, this can be changed individually for each cc
+  Features:
+    - Blueprints and ghosts now carry cc and rc data
+    - New sticky behaviour: Craft-n-before-switch
+      - This behaviour addresses the changing or flip-flopping of recipes due to the fluctuation of signals caused by crafting machine's buffer (be it in the input slot or the "limbo" while the machine is crafting) (https://github.com/theRustyKnife/CraftingCombinator/issues/64)
+      - This is how it currently works:
+        - If a cc needs to change or clear a recipe with the setting enabled (more than 0), it will enter sticky mode for that amount of craft cycles and not respond to any signal change
+        - Once sticky period is over, the cc will evaluate the signals for one update cycle and change recipe if necessary, after which the cc will be allowed to engage sticky mode again
+        - The duration of sticky period is evaluated only once per sticky mode activation. It is calculated based on machine's crafting progress and speed. Actual product is not taken into account in bringing the cc out of sticky mode - this is the intended design for UPS reason
+      - By default a new/migrated cc is set to allow one more craft cycle before recipe switch
+    - Cloning of cc and rc is now handled (e.g. Space Exploration's spaceship)
+    - Mod settings added for the following features:
+      - Module chest inventory size (in Startup)
+      - Craft-n-before-switch for newly placed cc
+      - Input buffer size (during recipe change) for newly placed cc
+  Locale:
+    - Fixed duplicate key for cs.cfg
+    - Missing translations for new keys
+  Changes:
+    - Optimized cc idle performance (https://github.com/theRustyKnife/CraftingCombinator/pull/71).
+      - As a result from this optimization, the combinator will no longer attempt to switch recipe if the chosen recipe/state of no recipe is the same as the previous update cycle
+      - The optimization above might cause unintended cc behaviours
+      - As a general rule, cc in this version does not respond well to manual interventions - hence the behaviour of cc does not clear recipe for manually set assemblers
+      - Sending a signal or resetting the cc setup should fix this
+    - Event registration now uses filters
+    - Improved event handling for module chest, uses mine-entity instead of manual inventory management
+    - Depreciated the usage of programmable speaker to store bp settings (settings-parser module)

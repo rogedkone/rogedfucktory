@@ -1,0 +1,23 @@
+ToDo
+-fix repeated code
+	-settings
+	-setting descriptions
+	-onTreeDestroyed
+-cashe settings
+-property tables for settings
+-options for
+	-biter spawn team
+	-defulte if property unspesifed
+	-range for num biters
+		-equations for the above
+	-evoltion of biters
+		-equations for the above
+-option presets
+	-off
+	-10% chance 1x biter
+	-1% 20 biters (balance)
+	-0.5% 100 biters
+-built in compatibility with biter reincarnation and biter revival 
+-spawn biters on tree poluted
+-spawn biters on cliff destroyed
+
