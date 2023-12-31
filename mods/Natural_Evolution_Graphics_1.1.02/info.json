@@ -1,0 +1,12 @@
+{
+	"name": "Natural_Evolution_Graphics",
+	"version": "1.1.02",
+	"factorio_version": "1.1",
+	"title": "Natural Evolution Graphics",
+	"author": "TheSAguy",
+	"contact": "vvwmisc@hotmail.com",
+	"homepage": "http://www.factorioforums.com/forum/viewtopic.php?f=91&t=13562&p",
+	"description": "Graphics Download for Natural Evolution Mods.",
+	"dependencies": ["base >= 1.1"]
+	
+}

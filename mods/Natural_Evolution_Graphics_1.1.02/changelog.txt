@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.02
+Date: 2023-07-31
+  Uploaded by:
+    - TheSAguy
+
+  Features:
+    - Removed Zerg Graphics, now requires "erm_zerg_hd_assets" as a dependancy
+---------------------------------------------------------------------------------------------------
+Version: 1.1.01
+Date: 2023-07-28
+  Uploaded by:
+    - TheSAguy
+
+  Features:
+    - Initial Release - Graphics Pack for NE Mods
