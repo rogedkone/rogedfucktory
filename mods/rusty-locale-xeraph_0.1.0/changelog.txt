@@ -1,0 +1,7 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: ???
+  Info:
+    - First fork release.
+  Bugfixes:
+    - Fixes crash when recipe.results is empty or sparse (https://mods.factorio.com/mod/crafting_combinator_xeraph/discussion/63d9a3053837d81618202432)

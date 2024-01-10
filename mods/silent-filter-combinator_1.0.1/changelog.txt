@@ -1,0 +1,46 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2024-01-05
+
+  Bugfixes:
+    - Fixed not updating filters when only removing signals
+    - Fixed it taking some time to open / close the UI
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2023-12-27
+
+  Features:
+    - Added ability to filter based on signals present on a specific wire
+    - Added ability to switch from inclusive to exclusive mode (#2)
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 2023-12-25
+
+  Bugfixes:
+    - Fixed not being able to blueprint or copy and paste settings between filter combinators
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2023-08-14
+
+  Features:
+    - Added support for compact circuits mod.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2023-08-14
+
+  Bugfixes:
+    - Fixed not being able to copy settings between filter combinators.
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 2023-06-04
+
+  Features:
+    - Added support for Nanobots.
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 2023-06-04
+
+  Features:
+    - Allow to filter the input for any number of signals you want to allow to pass through.

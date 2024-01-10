@@ -39,11 +39,6 @@
     },
     
     {
-      "name": "alien-biomes-settings",
-      "enabled": false
-    },
-    
-    {
       "name": "angels-smelting-extended",
       "enabled": true
     },
@@ -365,7 +360,7 @@
     
     {
       "name": "erm_zerg_hd_assets",
-      "enabled": true
+      "enabled": false
     },
     
     {
@@ -635,16 +630,6 @@
     
     {
       "name": "Nanobots",
-      "enabled": true
-    },
-    
-    {
-      "name": "Natural_Evolution_Enemies",
-      "enabled": true
-    },
-    
-    {
-      "name": "Natural_Evolution_Graphics",
       "enabled": true
     },
     
@@ -985,6 +970,11 @@
     
     {
       "name": "Shortcuts-ick",
+      "enabled": true
+    },
+    
+    {
+      "name": "silent-filter-combinator",
       "enabled": true
     },
     
